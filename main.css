@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+button {
+    padding: 13px;
+    background-color: black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+button:hover {
+    background-color: rgb(43, 43, 43);
+}
+button:active, button:focus {
+    outline: none;
+}
+input {
+    width: 100%;
+    padding: 13px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+input:active, input:focus {
+    outline: none;
+}
+form {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    border-radius: 15px;
+    justify-content: center;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+header {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/pattern-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main {
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+.results-bar {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+}
+.error {
+    border: 5px solid rgb(255, 0, 0);
+}
+h1 {
+    color: white;
+    text-align: center;
+}
+.title {
+    margin-bottom: 5px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: hsl(0, 0%, 59%);
+    font-weight: 700;
+}
+.input {
+    font-size: 18px;
+    color: hsl(0, 0%, 17%);
+    font-weight: 700;
+
+}
+.results-container {
+    margin-bottom: 20px;
+}
+/* .results-container-border {
+    border-left: 2px solid hsl(0, 0%, 59%);
+} */
+@media screen and (min-width: 768px) {
+    .results-bar {
+        padding: 20px 30px 0px 30px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        text-align: left;
+    }
+}
+@media screen and (min-width: 1000px) {
+    header {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+    .results-bar {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    form {
+        width: 500px;
+    }
+}
