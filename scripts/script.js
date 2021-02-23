@@ -3,21 +3,20 @@ let IPTest = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]
 let form = document.forms["ip-form"];
 let userInput = document.getElementById("ip-input");
 
-let mapIcon = L.icon({
-    iconUrl: '../images/icon-location.svg',
-}) 
+let mapIcon = L.icon({iconUrl: '../images/icon-location.svg',})
+let map = L.map('map').setView([0, 0], 2)
+let marker = L.marker([0, 0], {icon: mapIcon}).addTo(map)
+
+L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=GqK9TrulMPhUkm350Xvw', {
+}).addTo(map)
 
 let apiClient = async (ip) => {
     return fetch(`${baseURI}Address=${ip}`).then((response) => {
        return response.json()
     }).then ((data) => {
-        console.log(data)
         let {ip, location, isp} = data
-        let map = L.map('map').setView([location.lat, location.lng], 13)
-        L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=GqK9TrulMPhUkm350Xvw', {
-            attribution: `<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>`
-        }).addTo(map)
-        L.marker([location.lat, location.lng ], {icon: mapIcon}).addTo(map)
+        marker.setLatLng([location.lat, location.lng])
+        map.setView([location.lat, location.lng], 13)
         showResults(ip, location, isp)
     })
     .catch(err => {
