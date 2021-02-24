@@ -7,7 +7,7 @@ let userInput = document.getElementById("ip-input");
 let loadScreen = document.getElementById("loading-container");
 
 let map = L.map('map').setView([0, 0], 3)
-let mapIcon = L.icon({iconUrl: 'map-marker-alt-solid.svg'})
+let mapIcon = L.icon({iconUrl: '/images/map-marker-alt-solid.svg'})
 let marker = L.marker([0, 0], {icon: mapIcon}).addTo(map)
 
 L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=GqK9TrulMPhUkm350Xvw', {
