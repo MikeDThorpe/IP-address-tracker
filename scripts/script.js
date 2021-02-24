@@ -30,7 +30,7 @@ let apiClient = async (ip) => {
         loadScreen.style.display = "none"
         let {ip, location, isp} = data
         marker.setLatLng([location.lat, location.lng])
-        map.setView([location.lat, location.lng], 13)
+        map.setView([location.lat, location.lng], 20)
         showResults(ip, location, isp)
     })
     .catch(err => {
