@@ -6,7 +6,7 @@ let form = document.forms["ip-form"];
 let userInput = document.getElementById("ip-input");
 let loadScreen = document.getElementById("loading-container");
 
-let mapIcon = L.icon({iconUrl: '../images/icon-location.svg',})
+let mapIcon = L.icon({iconUrl: '../images/icon-location.svg'})
 let map = L.map('map').setView([0, 0], 3)
 let marker = L.marker([0, 0], {icon: mapIcon}).addTo(map)
 
