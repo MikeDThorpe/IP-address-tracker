@@ -16,7 +16,11 @@
   crossorigin=""></script>
   <title>Frontend Mentor | IP Address Tracker</title>
 </head>
-<body>
+<body onload="getUserIp()">
+  <div id="loading-container">
+    <h5>Finding Your IP Address</h5>
+    <img src="./images/loading.gif" alt="">
+  </div>
   <header>
     <h1>IP Address Tracker</h1>
     <form id="ip-form">

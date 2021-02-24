@@ -42,7 +42,7 @@ header {
     padding-left: 30px;
     padding-right: 30px;
     position: relative;
-    z-index: 5;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,9 +97,27 @@ h1 {
 .results-container {
     margin-bottom: 20px;
 }
-/* .results-container-border {
-    border-left: 2px solid hsl(0, 0%, 59%);
-} */
+#loading-container {
+    padding-top: 50px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    color: hsl(0, 0%, 17%);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
 @media screen and (min-width: 768px) {
     .results-bar {
         padding: 20px 30px 0px 30px;
