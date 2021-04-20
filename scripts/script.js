@@ -23,7 +23,7 @@ let getUserIp = async () => {
 
 
 
-let apiClient = async (ip) => {
+let apiClient = (ip) => {
     return fetch(`${baseURI}Address=${ip}`).then((response) => {
        return response.json()
     }).then ((data) => {
